@@ -53,4 +53,8 @@ window.onload = function() {
         ctx.stroke();
     }
     
+<<<<<<< HEAD
 };
+=======
+};
+>>>>>>> e446ca87fb7419ba383a38c3f00d80086fceebcd
