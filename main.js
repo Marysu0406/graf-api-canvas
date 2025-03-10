@@ -1,60 +1,60 @@
 window.onload = function() {
-    let canvas = document.getElementById("myCanvas");
-    let ctx = canvas.getContext("2d");
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
 
-    // Dibujar un rectángulo
-    function drawRect() {
-        ctx.beginPath();
-        ctx.rect(50, 50, 150, 100);
-        ctx.fillStyle = 'blue';
-        ctx.fill();
-        ctx.closePath();
+    if (!canvas || !ctx) {
+        console.error("No se encontró el canvas o su contexto.");
+        return;
     }
-    
 
-    // Dibujar un triángulo
-    function drawTriangle() {
-        ctx.beginPath();
-        ctx.moveTo(100, 100);
-        ctx.lineTo(150, 50);
-        ctx.lineTo(200, 100);
-        ctx.closePath();
-        ctx.fillStyle = 'green';
-        ctx.fill();
-    }
-    
-    // Dibujar una línea
-    function drawLines() {
-        ctx.beginPath();
-        ctx.moveTo(50, 300);
-        ctx.lineTo(250, 300);
-        ctx.lineTo(250, 400);
-        ctx.lineTo(50, 400);
-        ctx.closePath();
-        ctx.stroke();
-    }
-    
+    // Dibujar un rectángulo azul
+    ctx.fillStyle = "blue";
+    ctx.fillRect(50, 50, 100, 100);
 
-    // Dibujar un arco (círculo)
-    function drawArc() {
-        ctx.beginPath();
-        ctx.arc(300, 300, 50, 0, Math.PI * 2, false); // Círculo completo
-        ctx.fillStyle = 'red';
-        ctx.fill();
-        ctx.closePath();
-    }
-    
+    // Dibujar un triángulo rojo
+    ctx.beginPath();
+    ctx.moveTo(200, 50);
+    ctx.lineTo(250, 150);
+    ctx.lineTo(150, 150);
+    ctx.closePath();
+    ctx.fillStyle = "red";
+    ctx.fill();
 
-    // Dibujar una curva Bézier
-    function drawBezier() {
-        ctx.beginPath();
-        ctx.moveTo(50, 500);
-        ctx.bezierCurveTo(150, 400, 250, 600, 350, 500);
-        ctx.stroke();
-    }
-    
-<<<<<<< HEAD
+    // Dibujar una línea negra
+    ctx.beginPath();
+    ctx.moveTo(300, 50);
+    ctx.lineTo(400, 150);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+
+    // Dibujar un arco verde
+    ctx.beginPath();
+    ctx.arc(450, 100, 50, 0, Math.PI * 2);
+    ctx.strokeStyle = "green";
+    ctx.stroke();
+
+    // Dibujar curva Bézier (púrpura)
+    ctx.beginPath();
+    ctx.moveTo(50, 250);
+    ctx.bezierCurveTo(150, 200, 250, 300, 350, 250);
+    ctx.strokeStyle = "purple";
+    ctx.stroke();
+
+    // Dibujar curva cuadrática (naranja)
+    ctx.beginPath();
+    ctx.moveTo(50, 300);
+    ctx.quadraticCurveTo(150, 200, 250, 300);
+    ctx.strokeStyle = "orange";
+    ctx.stroke();
+
+    // Dibujar combinación de líneas y figuras
+    ctx.beginPath();
+    ctx.moveTo(400, 200);
+    ctx.lineTo(450, 250);
+    ctx.lineTo(400, 300);
+    ctx.lineTo(350, 250);
+    ctx.closePath();
+    ctx.fillStyle = "cyan";
+    ctx.fill();
 };
-=======
-};
->>>>>>> e446ca87fb7419ba383a38c3f00d80086fceebcd
